@@ -1,13 +1,14 @@
 /* Variables */
-$vin-blue: #5bb7db;
-$vin-green: #60b044;
-$vin-red: #ff0000;
+$blue: #5bb7db;
+$green: #60b044;
+$red: #ff0000;
+$gray: #4d4d4d;
 
 /* Styles */
 body {
   font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
   line-height: 1.4em;
-  color: #4d4d4d;
+  color: $gray;
   min-width: 230px;
   max-width: 550px;
   margin: 0 auto;
@@ -17,6 +18,19 @@ body {
   font-weight: 300;
 }
 
+h1 {
+  color: $blue;
+  font-size: 3.5em;
+}
+
 h2 {
-	color: $vin-blue;
+	color: $green;
+}
+
+button {
+  margin-left: 5px;
+}
+
+.title {
+  color: $red;
 }

@@ -3,9 +3,9 @@ import ListItem from './list_item';
 
 const List = ({ items }) =>
 (
-  <ol>
+  <ul>
     { items.map((item, index) => <ListItem key={index} item={item} index={index} />) }
-  </ol>
+  </ul>
 );
 
 List.propTypes = {
