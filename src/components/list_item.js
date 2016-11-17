@@ -4,13 +4,13 @@ const ListItem = ({ item, index }) =>
 (
   <li>
     <span className="title">Hero { index }: </span>
-    <span>{ item }</span>
+    <span>{ item.name }</span>
   </li>
 );
 
 ListItem.propTypes = {
   index: PropTypes.number.isRequired,
-  item: PropTypes.string.isRequired,
+  item: PropTypes.object.isRequired,
 };
 
 export default ListItem;
