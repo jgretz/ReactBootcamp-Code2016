@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import autobind from 'class-autobind';
 
 import List from './list';
-import { loadHeroes, loadHeroesNamed } from '../actions/load_heroes';
+import { loadHeroes } from '../actions/load_heroes';
 
 export default class Heroes extends Component {
   constructor(props) {
@@ -19,10 +19,6 @@ export default class Heroes extends Component {
   componentWillMount() {
     loadHeroes().then((heroes) => {
       this.setState({ ...this.state, heroes });
-    });
-
-    loadHeroesNamed('B').then((heroesNamed) => {
-      this.setState({ ...this.state, heroesNamed });
     });
   }
 
@@ -45,8 +41,6 @@ export default class Heroes extends Component {
     return (
       <div>
         <h2>Heroes</h2>
-        <h2>My B Heroes</h2>
-        { this.renderAlphabetically(this.state.heroesNamed) }
         <h2>My Alphabetical Heroes</h2>
         { this.renderAlphabetically() }
         <h2>Most Popular Hero</h2>
