@@ -79,7 +79,7 @@ We are going to quickly play around with HMR
 In this lab, we are going to play with lodash
 
 ### To Do:
-1. Add a render hero method that prints out the properties of the hero
+1. AIn the list item component change the code so that it prints out the properties of the hero
   1. Don't manually do it
   2. Omit the comics property
 2. Add a method to render heroes in alphabetical order
