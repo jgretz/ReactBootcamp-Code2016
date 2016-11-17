@@ -1,14 +1,23 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Nav, NavItem } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 
 const Menu = () =>
 (
-  <div className="menu">
-    <Link to="/heroes">Heroes</Link>
-    <Link to="/comics">Comics</Link>
-    <Link to="/creators">Creators</Link>
-    <Link to="/stories">Stories</Link>
-  </div>
+  <Nav bsStyle="pills">
+    <LinkContainer to="/heroes">
+      <NavItem>Heroes</NavItem>
+    </LinkContainer>
+    <LinkContainer to="/comics">
+      <NavItem>Comics</NavItem>
+    </LinkContainer>
+    <LinkContainer to="/creators">
+      <NavItem>Creators</NavItem>
+    </LinkContainer>
+    <LinkContainer to="/stories">
+      <NavItem>Stories</NavItem>
+    </LinkContainer>
+  </Nav>
 );
 
 export default Menu;

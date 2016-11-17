@@ -3,11 +3,10 @@ import { name } from '../utils';
 
 const ListItem = ({ item }) =>
 (
-  <li>
-    <span className="title">{name(item)}</span>
-    <br />
-    <span>{item.description}</span>
-  </li>
+  <tr key={item.id}>
+    <td>{name(item)}</td>
+    <td>{item.description}</td>
+  </tr>
 );
 
 ListItem.propTypes = {
