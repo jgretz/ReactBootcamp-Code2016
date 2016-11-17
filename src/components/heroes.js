@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import autobind from 'class-autobind';
 
 import List from './list';
+import { loadHeroes } from '../actions/load_heroes';
 
 export default class Heroes extends Component {
   constructor(props) {
@@ -10,33 +11,14 @@ export default class Heroes extends Component {
     autobind(this);
 
     this.state = {
-      heroes: [
-        {
-          id: 0,
-          name: 'Wolverine',
-          description: 'A mutant known for his regenerative abilities',
-          comics: {
-            available: 300,
-          }
-        },
-        {
-          id: 1,
-          name: 'Storm',
-          description: 'A mutant known for her ability to control the weather',
-          comics: {
-            available: 200,
-          }
-        },
-        {
-          id: 2,
-          name: 'Wonderboy',
-          description: 'A rocker with the power to kill a yak with mind bullets',
-          comics: {
-            available: 1,
-          }
-        },
-      ]
+      heroes: []
     };
+  }
+
+  componentWillMount() {
+    loadHeroes().then((heroes) => {
+      this.setState({ heroes });
+    });
   }
 
   renderAlphabetically() {
@@ -48,8 +30,9 @@ export default class Heroes extends Component {
 
   renderMostPopular() {
     const maxHero = _.maxBy(this.state.heroes, h => h.comics.available);
+    const list = maxHero ? [maxHero] : [];
     return (
-      <List items={[maxHero]} />
+      <List items={list} />
     );
   }
 
