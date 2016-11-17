@@ -2,7 +2,7 @@ import _ from 'lodash';
 import React, { PropTypes } from 'react';
 
 const ListItem = ({ item }) => {
-  const noComics = _.omit(item, 'comics');
+    const noComics = _.omit(item, 'comics', 'series', 'stories', 'urls', 'thumbnail', 'events');
     const tags = [];
 
     _.forOwn(noComics, (value, key) => {
