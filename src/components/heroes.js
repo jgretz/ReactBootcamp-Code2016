@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import React, { Component } from 'react';
 import autobind from 'class-autobind';
 
@@ -38,11 +39,28 @@ export default class Heroes extends Component {
     };
   }
 
+  renderAlphabetically() {
+    const sorted = _.sortBy(this.state.heroes, h => h.name);
+    return (
+      <List items={sorted} />
+    );
+  }
+
+  renderMostPopular() {
+    const maxHero = _.maxBy(this.state.heroes, h => h.comics.available);
+    return (
+      <List items={[maxHero]} />
+    );
+  }
+
   render() {
     return (
       <div>
         <h2>Heroes</h2>
-        <List items={this.state.heroes} />
+        <h2>My Alphabetical Heroes</h2>
+        { this.renderAlphabetically() }
+        <h2>Most Popular Hero</h2>
+        { this.renderMostPopular() }
       </div>
     );
   }

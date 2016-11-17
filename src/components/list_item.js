@@ -1,15 +1,27 @@
+import _ from 'lodash';
 import React, { PropTypes } from 'react';
 
-const ListItem = ({ item, index }) =>
-(
-  <li>
-    <span className="title">Hero { index }: </span>
-    <span>{ item.name }</span>
-  </li>
-);
+const ListItem = ({ item }) => {
+  const noComics = _.omit(item, 'comics');
+    const tags = [];
+
+    _.forOwn(noComics, (value, key) => {
+      tags.push((
+        <div key={key}>
+          <span>{key}: </span>
+          <span>{value}</span>
+        </div>
+      ));
+    });
+
+    return (
+      <li key={item.id}>
+        { tags }
+      </li>
+    );
+};
 
 ListItem.propTypes = {
-  index: PropTypes.number.isRequired,
   item: PropTypes.object.isRequired,
 };
 
