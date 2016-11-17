@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 const Menu = () =>
 (
-  <div>
+  <div className="menu">
     <Link to="/heroes">Heroes</Link>
     <Link to="/comics">Comics</Link>
     <Link to="/creators">Creators</Link>
