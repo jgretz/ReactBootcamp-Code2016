@@ -57,12 +57,12 @@ Create the following components
 We are going to hook up state, and start making our form do something
 
 ### To Do:
-1. Add class-autobind into Home and Input
+1. Add class-autobind into Heroes and Input
 2. Move our pre-populated list to state
    * Start with an empty array
 3. Add change methods to input to handle typing into the box
 4. Expose a functional property on input to capture the user hitting "add"
-5. Update state in home when the user presses add
+5. Update state in Heroes when the user presses add
 
 ## Lab 6
 ### Context:
@@ -95,8 +95,8 @@ In this lab, we are going to get familiar with promises
 1. Create a file in actions name load_heroes
   1. Export a function named loadHeroes that returns a promise that delays for a second, then resolves to the array of heroes supplied
   2. Use the delay method that lodash supplies
-2. Make the initial state in home an empty array
-3. Import the loadHeroes function in home, call it in componentWillMount, update the state appropriately
+2. Make the initial state in Heroes an empty array
+3. Import the loadHeroes function in Heroes, call it in componentWillMount, update the state appropriately
 
 ## Lab 9
 ### Context:
@@ -134,7 +134,7 @@ We are going to move our data out to redux
 ### To Do:
 1. Convert the loadHeroes actions to use redux thunk or redux promise
 2. Add a reducer for the hero results
-3. Add the logic to connect the home component to redux
+3. Add the logic to connect the Heroes component to redux
 
 ## Lab 2
 ### Context:

@@ -1,25 +1,30 @@
 import React, { Component } from 'react';
+import autobind from 'class-autobind';
+
 import List from './list';
 import ItemInput from './item_input';
 
 export default class Heroes extends Component {
   constructor(props) {
     super(props);
+    autobind(this);
 
-    this.items = [
-      'Wolverine',
-      'Storm',
-      'Wonderboy'
-    ];
+    this.state = {
+      items: []
+    };
+  }
+
+  addItem(item) {
+    this.setState({ items: [ ...this.state.items, item ] });
   }
 
   render() {
-    const { items } = this;
+    const { items } = this.state;
 
     return (
       <div>
         <h2>Heroes</h2>
-        <ItemInput />
+        <ItemInput addItem={this.addItem} />
         <List items={items} />
       </div>
     );
